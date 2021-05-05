@@ -2,7 +2,8 @@ import React from "react";
 
 function Meaning(props) {
   let synonyms = props.meaning.definitions[0].synonyms;
-
+  let example = props.meaning.definitions[0].example;
+  console.log(props.meaning.definitions);
   return (
     <div className="Meaning">
       <h3>{props.meaning.partOfSpeech}</h3>
@@ -11,7 +12,7 @@ function Meaning(props) {
           <div className="Definition" key={index}>
             <p>{definition.definition}</p>
             <br />
-            <em>Example: {definition.example}</em>
+            {example && <em>Example: {definition.example}</em>}
           </div>
         );
       })}
