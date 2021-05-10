@@ -5,6 +5,13 @@ import Result from "./Result";
 function Dictionary() {
   let [inputText, setInputText] = useState("");
   let [results, setResults] = useState(null);
+  let [clicked, setClicked] = useState("🇺🇸 What word do you want to look up?");
+  let [language, setLanguage] = useState("en_US");
+
+  function handleClick() {
+    setClicked("🇩🇪 Welches Wort möchten Sie nachschlagen?");
+    setLanguage("de");
+  }
 
   function hanleResponse(response) {
     setResults(response.data[0]);
@@ -12,7 +19,7 @@ function Dictionary() {
 
   function search(event) {
     // documentation: https://dictionaryapi.dev
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${inputText}`;
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/${language}/${inputText}`;
     axios.get(apiUrl).then(hanleResponse);
 
     event.preventDefault();
@@ -25,9 +32,16 @@ function Dictionary() {
 
   return (
     <div className="Dictionary">
+      <button onClick={handleClick}>DE</button>
+      <h4>{clicked}</h4>
       <form onSubmit={search}>
-        <input type="search" onChange={handleInput} autoFocus={true} />
+        <input
+          type="search"
+          onChange={handleInput}
+          placeholder="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _✍︎"
+        />
       </form>
+
       <Result results={results} />
     </div>
   );

@@ -1,15 +1,88 @@
-footer {
-  position: absolute;
-  text-align: center;
-  bottom: 20px;
-  width: 100%;
-  opacity: 0.3;
+body {
+  background: rgb(216, 231, 231);
 }
+small {
+  position: absolute;
+  text-align: right;
+  padding-right: 22px;
+  opacity: 0.3;
+  width: 100%;
+}
+button {
+  float: right;
+  margin-right: 20px;
+}
+input {
+  border-radius: 4px;
+  background-color: rgb(229, 241, 241);
+  border: none;
+  margin-bottom: 20px;
+  width: 400px;
+  height: 48px;
+  padding-left: 22px;
+  font-size: 18px;
+}
+input:focus {
+  outline-color: #795369;
+  outline-style: ridge;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #795369;
+}
+h5 {
+  margin-left: -32px;
+}
+
+.container {
+  display: inline;
+}
+
 .App-header {
-  text-align: center;
-  margin-top: 20px;
+  background-color: #795369;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+.App-header h1 {
+  color: #fff;
+
+  font-weight: 600;
 }
 .Dictionary {
-  text-align: center;
   margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+.phonetics {
+  display: inline-flex;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+.pheneticText {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.Meaning {
+  text-align: left;
+  background: rgb(228, 208, 226);
+  border-radius: 4px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  float: left;
+  margin: 10px;
+  width: 480px;
+}
+.Definition {
+  margin-bottom: 18px;
+}
+
+.SynonymList {
+  text-align: left;
+  list-style: circle;
+  display: inline-block;
 }
